@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Ali Abdullah Al Ramadan portfolio website with dynamic projects, GitHub API integration, theme state, and advanced interactivity."
+  />
+  <title>Ali Abdullah Al Ramadan | Portfolio</title>
+
+  <link rel="icon" type="image/x-icon" href="assets/images/icon.ico" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-text">Ali Abdullah Al Ramadan</span>
+      </div>
+
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#github">GitHub</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button id="themeToggle" class="btn btn-secondary" type="button" aria-label="Toggle theme">
+        Switch to Dark Mode
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero fade-in">
+      <div class="container hero-inner">
+        <div class="hero-top-row">
+          <p id="greeting" class="greeting" aria-live="polite"></p>
+
+          <div class="site-stats" aria-live="polite">
+            <p><strong>Time on site:</strong> <span id="timeOnSite">0s</span></p>
+          </div>
+        </div>
+
+        <h1>Building clean, responsive web experiences.</h1>
+        <p class="tagline">
+          I'm <strong>Ali Abdullah Al Ramadan</strong>, a Software Engineering student focused on building creative projects, exploring AI-driven solutions, and developing clean, responsive web applications.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">See my projects</a>
+          <a class="btn btn-secondary" href="#contact">Contact me</a>
+        </div>
+
+        <div class="visitor-card">
+          <div class="visitor-card-header">
+            <h2 class="visitor-title">Personalize your visit</h2>
+            <p id="visitorWelcome" class="visitor-welcome" aria-live="polite">
+              You are visiting as a guest.
+            </p>
+          </div>
+
+          <form id="visitorForm" class="visitor-form" novalidate>
+            <div class="control-group control-group-wide">
+              <label for="visitorName">Visitor Name</label>
+              <input
+                id="visitorName"
+                type="text"
+                placeholder="Enter your name..."
+                maxlength="30"
+                autocomplete="name"
+              />
+            </div>
+
+            <div class="visitor-actions">
+              <button id="saveVisitorBtn" class="btn btn-primary small-btn" type="submit">
+                Save Name
+              </button>
+              <button id="clearVisitorBtn" class="btn btn-secondary small-btn" type="button">
+                Clear Name
+              </button>
+            </div>
+          </form>
+
+          <p id="visitorStatus" class="visitor-status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about-section fade-in">
+      <div class="container">
+        <div class="about-card">
+          <div class="section-heading-row">
+            <h2>About Me</h2>
+            <button
+              id="aboutToggle"
+              class="btn btn-secondary small-btn"
+              type="button"
+              aria-expanded="true"
+              aria-controls="aboutContent"
+            >
+              Hide Details
+            </button>
+          </div>
+
+          <div id="aboutContent">
+            <div class="about-grid">
+              <img
+                class="profile-img"
+                src="assets/images/Alicmd.jpg"
+                alt="Photo of Ali"
+                width="160"
+                height="160"
+                loading="lazy"
+              />
+
+              <div class="about-text">
+                <p>
+                  I’m a Software Engineering student focused on building creative, practical projects that combine clean development with modern technologies.
+                </p>
+
+                <p>
+                  I’m particularly interested in game development and modding, where creativity meets technical problem-solving. I enjoy working with languages like C# and Java, and I’m gradually expanding into databases and SQL to strengthen my full-stack understanding.
+                </p>
+
+                <p>
+                  Currently, I’m developing my front-end skills with HTML, CSS, and JavaScript to create responsive, user-friendly web experiences. My goal is to continuously grow as a developer by turning ideas into real, functional applications.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills" class="section fade-in">
+      <div class="container">
+        <div class="skills-card">
+          <div class="section-heading-row">
+            <h2>Skills</h2>
+          </div>
+
+          <div class="skills-grid">
+            <article class="skill-group glass-card">
+              <h3>Front-End</h3>
+              <div class="skills-tags">
+                <span class="project-tag">HTML5</span>
+                <span class="project-tag">CSS3</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">Responsive Design</span>
+                <span class="project-tag">Accessibility</span>
+              </div>
+            </article>
+
+            <article class="skill-group glass-card">
+              <h3>Programming</h3>
+              <div class="skills-tags">
+                <span class="project-tag">C#</span>
+                <span class="project-tag">Java</span>
+                <span class="project-tag">SQL</span>
+                <span class="project-tag">Problem Solving</span>
+              </div>
+            </article>
+
+            <article class="skill-group glass-card">
+              <h3>Tools</h3>
+              <div class="skills-tags">
+                <span class="project-tag">Git & GitHub</span>
+                <span class="project-tag">VS Code</span>
+                <span class="project-tag">Visual Studio</span>
+                <span class="project-tag">GitHub API</span>
+                <span class="project-tag">Local Storage</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section fade-in">
+      <div class="container">
+        <div class="section-heading-row">
+          <div>
+            <h2>Projects</h2>
+          </div>
+
+          <button
+            id="advancedToggle"
+            class="btn btn-secondary small-btn"
+            type="button"
+            aria-expanded="false"
+            aria-controls="advancedControls"
+          >
+            Advanced Filters
+          </button>
+        </div>
+
+        <div class="projects-controls">
+          <div class="control-group control-group-wide">
+            <label for="projectSearch">Search projects</label>
+            <input
+              id="projectSearch"
+              type="search"
+              placeholder="Search by title, description, or tag..."
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <div id="advancedControls" class="advanced-controls" hidden>
+          <div class="projects-controls projects-controls-advanced">
+            <div class="control-group">
+              <label for="categoryFilter">Category</label>
+              <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="Web">Web</option>
+                <option value="Desktop">Desktop</option>
+                <option value="Portfolio">Portfolio</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="levelFilter">Project Level</label>
+              <select id="levelFilter">
+                <option value="all">All Levels</option>
+                <option value="Beginner">Beginner Friendly</option>
+                <option value="Advanced">Advanced</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="sortProjects">Sort By</label>
+              <select id="sortProjects">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+                <option value="title-asc">Title A-Z</option>
+                <option value="title-desc">Title Z-A</option>
+              </select>
+            </div>
+
+            <div class="control-group action-group">
+              <label class="visibility-hidden">Reset controls</label>
+              <button id="resetFiltersBtn" class="btn btn-secondary" type="button">
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects-summary">
+          <p id="projectsCount" class="projects-count" aria-live="polite"></p>
+        </div>
+
+        <div id="projectsGrid" class="projects-grid" aria-live="polite"></div>
+
+        <p id="projectsEmpty" class="empty-state" hidden>
+          No projects found. Try changing the search or filters.
+        </p>
+
+        <div class="projects-actions">
+          <button id="toggleProjectsBtn" class="btn btn-secondary small-btn" type="button">
+            Show More
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GITHUB API -->
+    <section id="github" class="section fade-in">
+      <div class="container">
+        <div class="api-card">
+          <div class="section-heading-row">
+            <h2>GitHub</h2>
+
+            <div class="api-actions">
+              <button
+                id="githubToggle"
+                class="btn btn-secondary small-btn"
+                type="button"
+                aria-expanded="false"
+                aria-controls="githubContent"
+              >
+                Show GitHub Section
+              </button>
+
+              <button id="reloadGithubBtn" class="btn btn-secondary small-btn" type="button">
+                Refresh
+              </button>
+            </div>
+          </div>
+
+          <div id="githubContent" hidden>
+            <p id="githubStatus" class="api-status" aria-live="polite">
+              Loading repositories...
+            </p>
+
+            <div id="githubRepoGrid" class="repo-grid" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section fade-in">
+      <div class="container">
+        <h2>Contact</h2>
+
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Enter your full name..."
+              required
+            />
+            <p class="error-msg" id="nameError" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="example@email.com"
+              required
+            />
+            <p class="error-msg" id="emailError" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Write your message here..."
+              required
+            ></textarea>
+            <p class="error-msg" id="messageError" aria-live="polite"></p>
+          </div>
+
+          <div class="field checkbox-field">
+            <label for="termsCheck" class="checkbox-label">
+              <input id="termsCheck" type="checkbox" />
+              <span>I confirm the information above is valid.</span>
+            </label>
+            <p class="error-msg" id="termsError" aria-live="polite"></p>
+          </div>
+
+          <button id="sendBtn" class="btn btn-primary" type="submit">
+            Send Message
+          </button>
+
+          <p id="formStatus" class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">↑</button>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Ali Abdullah Al Ramadan</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
